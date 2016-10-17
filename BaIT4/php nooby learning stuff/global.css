@@ -1,0 +1,23 @@
+* {
+	padding:0px;
+	margin:0px;
+}
+
+body {
+	
+}
+
+.wrapper {
+	width:970px;
+	margin:0px auto;
+	position:relative;
+	text-align:left;
+}
+
+.content {
+	padding:10px;
+}
+
+.register {
+	display:none;
+}

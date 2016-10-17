@@ -1,0 +1,42 @@
+
+Movie or series information
+-----------------
+Cover image -
+Movie Series Name -
+Synopsis - 
+Klassification (g, PG, PG-13, R, R+) -
+length -
+prodution year -
+actors  - 
+instructors
+author
+add to list button
+
+Actors information
+---------------
+
+Instructor information
+------------------
+
+Author information
+------------------
+
+list
+--------------
+Movie/Series Name
+Number of episodes watched e.g. (13/26 for ep 13 in a series of 26 episodes)
+sub list of complete movies/tv-shows
+list of movies/tv-shows the user is watching
+list of movies or series that user plans to watch
+list of movies/tv-shows that user has dropped
+list of movies/tv shows that user has set on-hold
++button (i have seen one more episode of this)
+edit button (i made a mistake and wish to correct it, add several episodes or detract? several episodes, delete show from list.)
+
+total time spent watching
+
+number of movies/tv-shows seen
+
+a movie watched would classify as 1/1 on the list and complete
+
+no rating system to start with, this can be added later

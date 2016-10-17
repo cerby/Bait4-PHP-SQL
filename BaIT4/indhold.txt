@@ -1,0 +1,35 @@
+
+Film serie profil
+-----------------
+Billede -
+Film/serie navn -
+Synopsis - 
+Klassificering -
+længde -
+produtions år -
+skuespillere - 
+instruktører
+forfattere
+tilføj til liste knap
+hvilken episode er jeg på
+fjern fra liste .. er du sikker?
+
+
+liste
+--------------
+film/serie navn
+antal episoder set
+filmen/serien er set/færdig
+filmen/serien følges/ses
+filmen/serien skal ses/ikke påbegyndt
+filmen/serien er droppet
+filmen/serien er sat på pause
++knap (jeg har set en mere episode af dette)
+edit knap (jeg lavede en fejl eller ønsker at rette noget eller tilføje indtil flere episoder, osv.)
+
+total tid spenderet
+
+total antal film/serier set 
+1 film klassificeres som 1 episode, men tiden der bruges til sammenlægning er den sat til filmen
+
+ingen rating system i første omgang!

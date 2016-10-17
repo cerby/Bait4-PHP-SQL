@@ -1,0 +1,86 @@
+http://www.finalwebsites.com/tutorials/dynamic-navigation-list.php
+
+CREATE TABLE `dyn_menu` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `label` VARCHAR(50) NOT NULL DEFAULT '',
+  `link_url` VARCHAR(100) NOT NULL DEFAULT '#',
+  `parent_id` INT(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY  (`id`)
+) TYPE=MyISAM;
+
+--------------------------------
+$sql = "SELECT id, label, link_url, parent_id FROM dyn_menu ORDER BY parent_id, id ASC";
+$items = mysql_query($sql);
+while ($obj = mysql_fetch_object($items)) {
+    if ($obj->parent_id == 0) {
+        $parent_menu[$obj->id]['label'] = $obj->label;
+        $parent_menu[$obj->id]['link'] = $obj->link_url;
+    } else {
+        $sub_menu[$obj->id]['parent'] = $obj->parent_id;
+        $sub_menu[$obj->id]['label'] = $obj->label;
+        $sub_menu[$obj->id]['link'] = $obj->link_url;
+        $parent_menu[$obj->parent_id]['count']++;
+    }
+}
+mysql_free_result($items);
+-------------------------------
+function dyn_menu($parent_array, $sub_array, $qs_val = "menu", $main_id = "nav", $sub_id = "subnav", $extra_style = "foldout") {
+    $menu = "<ul id=\"".$main_id."\">\n";
+    foreach ($parent_array as $pkey => $pval) {
+        if (!empty($pval['count'])) {
+            $menu .= "  <li><a class=\"".$extra_style."\" href=\"".$pval['link']."?".$qs_val."=".$pkey."\">".$pval['label']."</a></li>\n";
+        } else {
+            $menu .= "  <li><a href=\"".$pval['link']."\">".$pval['label']."</a></li>\n";
+        }
+        if (!empty($_REQUEST[$qs_val])) {
+            $menu .= "<ul id=\"".$sub_id."\">\n";
+            foreach ($sub_array as $sval) {
+                if ($pkey == $_REQUEST[$qs_val] && $pkey == $sval['parent']) {
+                    $menu .= "<li><a href=\"".rebuild_link($sval['link'], $qs_val, $sval['parent'])."\">".$sval['label']."</a></li>\n";
+                }
+            }
+            $menu .= "</ul>\n";
+        }
+    }
+    $menu .= "</ul>\n";
+    return $menu;
+}
+----------------------------------
+foreach ($parent_array as $pkey => $pval) {
+    if (!empty($pval['count'])) {
+        $menu .= "  <li><a class=\"".$extra_style."\" href=\"".$pval['link']."?".$qs_val."=".$pkey."\">".$pval['label']."</a></li>\n";
+    } else {
+        $menu .= "  <li><a href=\"".$pval['link']."\">".$pval['label']."</a></li>\n";
+    }
+
+Inside the loop there is a test for the count value from parent items, if the count is not null the menu item querystring value is added.
+if (!empty($_REQUEST[$qs_val])) {
+    $menu .= "<ul id=\"".$sub_id."\">\n";
+    foreach ($sub_array as $sval) {
+        if ($pkey == $_REQUEST[$qs_val] && $pkey == $sval['parent']) {
+            $menu .= "<li><a href=\"".rebuild_link($sval['link'], $qs_val, $sval['parent'])."\">".$sval['label']."</a></li>\n";
+        }
+    }
+    $menu .= "</ul>\n";
+--------------------------
+function rebuild_link($link, $parent_var, $parent_val) {
+    $link_parts = explode("?", $link);
+    $base_var = "?".$parent_var."=".$parent_val;
+    if (!empty($link_parts[1])) {
+        $link_parts[1] = str_replace("&amp;", "##", $link_parts[1]);
+        $parts = explode("##", $link_parts[1]);
+        $newParts = array();
+        foreach ($parts as $val) {
+            $val_parts = explode("=", $val);
+            if ($val_parts[0] != $parent_var) {
+                array_push($newParts, $val);
+            }
+        }
+        if (count($newParts) != 0) {
+            $qs = "&amp;".implode("&amp;", $newParts);
+        }
+        return $link_parts[0].$base_var.$qs;
+    } else {
+        return $link_parts[0].$base_var;
+		--------------------------------------
+echo dyn_menu($parent_menu, $sub_menu, "menu", "nav", "subnav");

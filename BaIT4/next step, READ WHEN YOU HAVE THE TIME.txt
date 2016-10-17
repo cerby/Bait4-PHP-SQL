@@ -1,0 +1,25 @@
+what is needed for mymovielist?
+
+first thing i believe that needs to be worked on is a design.
+while i first was of the belief that it may be better to make usability tests of other similar websites, i am not so sure of this anymore.
+I believe it could still benefit mymovielist if these were done, to see what problems they other websites have, I think starting a general design and then do iterations on this (iterations with usability testing inbetween) could possible benefit it on an equal level.
+the other pages (myanimelist, anidb, imdb, rottentomatoes?) should still be a source of inspiration for the design of the page.
+In the design, we need to be clear on how information on movies and tv-shows can be handled. who has the easiest to access information on different stuff related to movies?
+
+another thing is what information people are usually looking for. how many are looking at forexample the staff of the movie and the rating (age group) and how important is it that this information is clearly set on the page?
+
+there is alot of factors that go into this and i think we need to look at them WHILE we are designing it.
+if a designer is chosen, they need to be clear on that this is not a one time design, but something that will be made through iterations.
+
+i thing to remember, is that if we want to appeal to groups already familiar with the other web sites, we cannot go too far in attempts on being unique, certain items need to be shown, certain colors will need to be present, image layout contra text layout, can't show roles without actors being shown nearby(most likely should be on the same line too, or does it? do people like that design?)
+
+once we are happy with the finished design of the website, it needs to be built and the database needs to be fitted it.
+
+I personally think the hardest part will be making a design that the majority will be happy with. choice of colors, ways of displaying information, ease of use all come to mind in this phase.
+
+
+===== new =====
+About the design, i myself am a bad designer, so i asked kumi-chan to have a look at mal and imdb, and how they could be formed together.
+
+and for a lot of parts in this website it's about generating the right information, so the design isn't a big problem for now.
+We could use mal's layout for now

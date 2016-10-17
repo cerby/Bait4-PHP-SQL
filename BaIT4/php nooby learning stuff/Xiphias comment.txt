@@ -1,0 +1,4 @@
+well the api states: mysql_query() will also fail and return FALSE if the user does not have permission to access the table(s) referenced by the query. 
+[02:04] <@Xiphias3> so you're getting a boolean result, not a resourcfe
+[02:04] <@Xiphias3> resource*
+[02:06] <@Xiphias3> the call failed

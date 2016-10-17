@@ -1,0 +1,11 @@
+data/index.php.i
+data/classes/Controllers/home.php.i
+data/configs/config.ini.i
+data/classes/url.php.i
+data/classes/view.php.i
+data/configs/database.ini.i
+data/classes/Controllers/test.php.i
+data/classes/database.php.i
+data/classes/router.php.i
+data/classes/Controllers/admin/lol.php.i
+data/classes/template.php.i

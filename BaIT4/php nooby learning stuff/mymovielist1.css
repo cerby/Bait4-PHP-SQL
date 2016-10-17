@@ -1,0 +1,55 @@
+*{
+padding:0px;
+margin:0px;
+}
+
+body 
+{
+    margin: 0;
+    text-align: center;
+    font-family: Verdana, Arial;
+    font-size: 11px;
+    background-color: #ffffff;
+    background: transparent url(/mymovielistbigbackground.png);
+}
+
+#mymovielist
+{
+    width: 1440px;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+}
+
+#menu
+{
+    height: 70px;
+    width: 1000px;
+    background-color: #49FF53;
+    position:relative;
+    margin:150px auto 0px;
+}
+
+#searchBar {
+    padding-top: 6px;
+    padding-right: 5px;
+}
+
+#content {
+    border: 1px solid #EBEBEB;
+    padding: 5px 10px 10px 10px;
+    background-color: #ffffff;
+    position: relative;
+}
+
+#contentHome {
+    border: 1px solid #EBEBEB;
+    padding: 5px 0 10px 0;
+    background-color: #ffffff;
+    position: relative;
+}
+
+#login
+{
+    padding: 5px;
+}
